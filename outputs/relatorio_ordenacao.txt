@@ -1,0 +1,145 @@
+==============================================================================
+RELATÓRIO DE BENCHMARK - ALGORITMOS DE ORDENAÇÃO
+Gerado em: 02/10/2026 01:22:42
+Repetições por medição: 3 (média ± desvio padrão)
+Tempo total de execução: 138.6s
+==============================================================================
+NOTAS METODOLÓGICAS:
+  - O(n2) testados ate n=10.000 (100.000 seria inviavel - pag. 23 do PDF).
+  - Quick in-place limitado a n<=10.000 por causa do pior caso O(n2)
+    em listas ordenadas/invertidas (pag. 50 do PDF).
+==============================================================================
+
+
+### CENÁRIO: ALEATORIO ###
+------------------------------------------------------------------------------
+Algoritmo                     n      Média (s)       Desvio
+------------------------------------------------------------------------------
+Bubble (ingênuo)            100         0.0003       0.0000
+Bubble (ingênuo)           1000         0.0453       0.0007
+Bubble (ingênuo)          10000         4.9727       0.1635
+Bubble (otimizado)          100         0.0004       0.0000
+Bubble (otimizado)         1000         0.0445       0.0004
+Bubble (otimizado)        10000         5.0876       0.1144
+Insertion Sort              100         0.0002       0.0000
+Insertion Sort             1000         0.0214       0.0004
+Insertion Sort            10000         2.1701       0.0279
+Selection Sort              100         0.0002       0.0000
+Selection Sort             1000         0.0209       0.0009
+Selection Sort            10000         2.1709       0.0242
+Merge Sort                  100         0.0001       0.0000
+Merge Sort                 1000         0.0017       0.0000
+Merge Sort                10000         0.0232       0.0006
+Merge Sort               100000         0.2853       0.0015
+Quick (funcional)           100         0.0001       0.0000
+Quick (funcional)          1000         0.0014       0.0001
+Quick (funcional)         10000         0.0179       0.0006
+Quick (funcional)        100000         0.1950       0.0029
+Timsort (sorted)            100         0.0000       0.0000
+Timsort (sorted)           1000         0.0001       0.0000
+Timsort (sorted)          10000         0.0011       0.0000
+Timsort (sorted)         100000         0.0147       0.0001
+Quick (in-place)            100         0.0001       0.0000
+Quick (in-place)           1000         0.0010       0.0000
+Quick (in-place)          10000         0.0148       0.0011
+
+
+### CENÁRIO: ORDENADO ###
+------------------------------------------------------------------------------
+Algoritmo                     n      Média (s)       Desvio
+------------------------------------------------------------------------------
+Bubble (ingênuo)            100         0.0002       0.0000
+Bubble (ingênuo)           1000         0.0255       0.0002
+Bubble (ingênuo)          10000         2.9223       0.0085
+Bubble (otimizado)          100         0.0000       0.0000
+Bubble (otimizado)         1000         0.0001       0.0000
+Bubble (otimizado)        10000         0.0006       0.0000
+Insertion Sort              100         0.0000       0.0000
+Insertion Sort             1000         0.0001       0.0000
+Insertion Sort            10000         0.0010       0.0000
+Selection Sort              100         0.0002       0.0000
+Selection Sort             1000         0.0216       0.0015
+Selection Sort            10000         2.0582       0.0251
+Merge Sort                  100         0.0001       0.0000
+Merge Sort                 1000         0.0014       0.0000
+Merge Sort                10000         0.0194       0.0009
+Merge Sort               100000         0.2245       0.0084
+Quick (funcional)           100         0.0001       0.0000
+Quick (funcional)          1000         0.0009       0.0001
+Quick (funcional)         10000         0.0122       0.0007
+Quick (funcional)        100000         0.1446       0.0020
+Timsort (sorted)            100         0.0000       0.0000
+Timsort (sorted)           1000         0.0000       0.0000
+Timsort (sorted)          10000         0.0001       0.0000
+Timsort (sorted)         100000         0.0008       0.0002
+Quick (in-place)            100         0.0002       0.0000
+Quick (in-place)           1000         0.0375       0.0187
+Quick (in-place)          10000         2.5340       0.0050
+
+
+### CENÁRIO: INVERTIDO ###
+------------------------------------------------------------------------------
+Algoritmo                     n      Média (s)       Desvio
+------------------------------------------------------------------------------
+Bubble (ingênuo)            100         0.0004       0.0000
+Bubble (ingênuo)           1000         0.0614       0.0021
+Bubble (ingênuo)          10000         6.2249       0.0138
+Bubble (otimizado)          100         0.0005       0.0000
+Bubble (otimizado)         1000         0.0597       0.0021
+Bubble (otimizado)        10000         6.4835       0.0603
+Insertion Sort              100         0.0003       0.0000
+Insertion Sort             1000         0.0388       0.0010
+Insertion Sort            10000         4.0892       0.0157
+Selection Sort              100         0.0002       0.0000
+Selection Sort             1000         0.0225       0.0002
+Selection Sort            10000         2.1296       0.0032
+Merge Sort                  100         0.0001       0.0000
+Merge Sort                 1000         0.0016       0.0002
+Merge Sort                10000         0.0198       0.0009
+Merge Sort               100000         0.2224       0.0034
+Quick (funcional)           100         0.0001       0.0000
+Quick (funcional)          1000         0.0009       0.0000
+Quick (funcional)         10000         0.0120       0.0008
+Quick (funcional)        100000         0.1447       0.0032
+Timsort (sorted)            100         0.0000       0.0000
+Timsort (sorted)           1000         0.0000       0.0000
+Timsort (sorted)          10000         0.0001       0.0000
+Timsort (sorted)         100000         0.0007       0.0002
+Quick (in-place)            100         0.0003       0.0001
+Quick (in-place)           1000         0.0254       0.0011
+Quick (in-place)          10000         2.5707       0.0372
+
+
+==============================================================================
+SÍNTESE — TEMPO EM n MAIS ALTO POR CENÁRIO
+==============================================================================
+
+[aleatorio]
+  Bubble (ingênuo)       n=10000   -> 4.9727s
+  Bubble (otimizado)     n=10000   -> 5.0876s
+  Insertion Sort         n=10000   -> 2.1701s
+  Selection Sort         n=10000   -> 2.1709s
+  Merge Sort             n=100000  -> 0.2853s
+  Quick (funcional)      n=100000  -> 0.1950s
+  Timsort (sorted)       n=100000  -> 0.0147s
+  Quick (in-place)       n=10000   -> 0.0148s
+
+[ordenado]
+  Bubble (ingênuo)       n=10000   -> 2.9223s
+  Bubble (otimizado)     n=10000   -> 0.0006s
+  Insertion Sort         n=10000   -> 0.0010s
+  Selection Sort         n=10000   -> 2.0582s
+  Merge Sort             n=100000  -> 0.2245s
+  Quick (funcional)      n=100000  -> 0.1446s
+  Timsort (sorted)       n=100000  -> 0.0008s
+  Quick (in-place)       n=10000   -> 2.5340s
+
+[invertido]
+  Bubble (ingênuo)       n=10000   -> 6.2249s
+  Bubble (otimizado)     n=10000   -> 6.4835s
+  Insertion Sort         n=10000   -> 4.0892s
+  Selection Sort         n=10000   -> 2.1296s
+  Merge Sort             n=100000  -> 0.2224s
+  Quick (funcional)      n=100000  -> 0.1447s
+  Timsort (sorted)       n=100000  -> 0.0007s
+  Quick (in-place)       n=10000   -> 2.5707s
