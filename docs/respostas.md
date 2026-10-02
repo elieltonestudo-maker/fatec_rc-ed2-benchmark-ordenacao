@@ -8,7 +8,7 @@ mais rapido (Timsort: ~0,0000s) e o mais lento (Bubble otimizado: ~0,0005s)
 ficou dentro da margem de ruido do sistema operacional, tornando qualquer
 escolha aceitavel nesse tamanho.
 
-Isso confirma o que a pagina 23 do material afirma: "o algoritmo bubble sort
+Isso confirma o que o material da disciplina afirma: "o algoritmo bubble sort
 tem bom desempenho em listas relativamente pequenas". Para n=100, ate
 algoritmos teoricamente ruins (O(n2)) sao viaveis porque o numero absoluto de
 operacoes e pequeno (~10.000 comparacoes).
@@ -30,12 +30,12 @@ Para listas grandes (n = 100.000), a diferenca e dramatica:
 | Bubble / Insertion / Selection | inviaveis (nao testados) |
 | Quick (in-place) | 0,0148s em n=10.000, mas 171x mais lento em ordenado/invertido |
 
-Os algoritmos O(n2) nao foram testados com n=100.000 porque, conforme a
-pagina 23, "o bubble sort nao deve ser usado para ordenar listas grandes".
+Os algoritmos O(n2) nao foram testados com n=100.000 porque, conforme visto
+em aula, "o bubble sort nao deve ser usado para ordenar listas grandes".
 
 **Destaque - QuickSort in-place:** no cenario aleatorio ele e rapido, mas nos
 cenarios ordenado e invertido ele cai para 2,5340s em n=10.000 - um aumento
-de 171 vezes, exatamente como a pagina 50 preve.
+de 171 vezes, exatamente como o material da disciplina preve para o pior caso.
 
 **Conclusao pratica:** para listas grandes, use Timsort (sorted/list.sort).
 
@@ -45,7 +45,7 @@ de 171 vezes, exatamente como a pagina 50 preve.
 
 **Sim, confirmam com precisao.** Evidencias:
 
-| Algoritmo | Complexidade teorica (pag. 61) | Evidencia empirica | Confirma? |
+| Algoritmo | Complexidade teorica | Evidencia empirica | Confirma? |
 |---|---|---|---|
 | Bubble (ingenuo) | O(n2) sempre | 4,97s -> 2,92s -> 6,22s em n=10.000 | Sim |
 | Bubble (otimizado) | O(n2) / O(n) melhor | 5,09s -> 0,0006s - 8.483x mais rapido | Sim |
@@ -58,16 +58,19 @@ de 171 vezes, exatamente como a pagina 50 preve.
 
 **Evidencias especificas:**
 
-- Selection Sort teve tempos quase identicos nos 3 cenarios, confirmando a pagina 40.
-- Bubble otimizado teve queda de 8.483x no cenario ordenado.
-- Quick in-place explodiu no cenario ordenado: 171x mais lento.
+- Selection Sort teve tempos quase identicos nos 3 cenarios, confirmando
+  que o algoritmo e O(n2) mesmo no melhor caso.
+- Bubble otimizado teve queda de 8.483x no cenario ordenado, confirmando O(n)
+  no melhor caso.
+- Quick in-place explodiu no cenario ordenado: 171x mais lento, confirmando
+  o pior caso O(n2).
 - Timsort foi o mais rapido em todos os cenarios.
 
-**Conclusao:** os dados confirmam empiricamente a tabela da pagina 61.
+**Conclusao:** os dados confirmam empiricamente a teoria de complexidade.
 
 ---
 
-## Bonus - Analise dos links da pagina 64
+## Bonus - Analise das referencias complementares
 
 ### sorted() vs list.sort() (Luciano Ramalho)
 

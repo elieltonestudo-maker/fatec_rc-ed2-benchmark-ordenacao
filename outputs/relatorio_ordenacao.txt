@@ -5,9 +5,9 @@ Repetições por medição: 3 (média ± desvio padrão)
 Tempo total de execução: 138.6s
 ==============================================================================
 NOTAS METODOLÓGICAS:
-  - O(n2) testados ate n=10.000 (100.000 seria inviavel - pag. 23 do PDF).
+  - O(n2) testados ate n=10.000 (100.000 seria inviavel na pratica).
   - Quick in-place limitado a n<=10.000 por causa do pior caso O(n2)
-    em listas ordenadas/invertidas (pag. 50 do PDF).
+    em listas ordenadas/invertidas.
 ==============================================================================
 
 

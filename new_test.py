@@ -18,7 +18,7 @@ sys.setrecursionlimit(100000)
 # ============================================================
 
 def bubble_sort_ingenuo(arr):
-    """Versão do PDF (sem flag). Sempre O(n²)."""
+    """Versão sem flag (bubble clássico). Sempre O(n²)."""
     n = len(arr)
     for i in range(n):
         for j in range(0, n - i - 1):
@@ -26,7 +26,7 @@ def bubble_sort_ingenuo(arr):
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
 
 def bubble_sort_otimizado(arr):
-    """Versão com flag: melhor caso O(n) — pág. 22 do PDF."""
+    """Versão com flag: melhor caso O(n)."""
     n = len(arr)
     for i in range(n):
         trocou = False
@@ -80,7 +80,7 @@ def merge_sort(arr):
             k += 1
 
 def _particionar(arr, low, high):
-    """Particionamento in-place com pivô = primeiro elemento (fiel ao PDF, pág. 47)."""
+    """Particionamento in-place com pivô = primeiro elemento."""
     pivo = arr[low]
     i, j = low + 1, high
     while i <= j:
@@ -102,7 +102,7 @@ def quick_sort_inplace(arr, low=0, high=None):
         quick_sort_inplace(arr, p + 1, high)
 
 def quick_sort_funcional(arr):
-    """Versão do código original do professor (list comprehensions, pivô no meio)."""
+    """Versão funcional com pivô no meio (list comprehensions)."""
     if len(arr) <= 1:
         return arr
     pivo = arr[len(arr) // 2]
@@ -134,15 +134,15 @@ def gerar_lista(n, cenario):
         return list(range(n, 0, -1))
 
 # ============================================================
-# CONFIGURAÇÃO DO BENCHMARK (conforme Exercícios.pdf)
+# CONFIGURAÇÃO DO BENCHMARK
 # ============================================================
 
-# Tamanhos pedidos pelo professor (pág. 1 do Exercícios.pdf)
-# O(n²) NÃO vão até 100.000 — inviável (pág. 23 do PDF de aula)
+# Tamanhos pedidos no enunciado
+# O(n²) NÃO vão até 100.000 — inviável na prática
 tamanhos_quadraticos   = [100, 1000, 10000]
 # O(n log n) "seguros" (Merge, Quick funcional, Timsort): todos os tamanhos
 tamanhos_eficientes    = [100, 1000, 10000, 100000]
-# Quick in-place: só até 10.000, porque no pior caso vira O(n²) (pág. 50 do PDF)
+# Quick in-place: só até 10.000, porque no pior caso vira O(n²)
 tamanhos_quick_inplace = [100, 1000, 10000]
 
 cenarios = ["aleatorio", "ordenado", "invertido"]
@@ -265,9 +265,9 @@ with open("outputs/relatorio_ordenacao.txt", "w", encoding="utf-8") as f:
     f.write(f"Tempo total de execução: {time.perf_counter() - inicio_total:.1f}s\n")
     f.write("=" * 78 + "\n")
     f.write("NOTAS METODOLÓGICAS:\n")
-    f.write("  - O(n2) testados ate n=10.000 (100.000 seria inviavel - pag. 23 do PDF).\n")
+    f.write("  - O(n2) testados ate n=10.000 (100.000 seria inviavel na pratica).\n")
     f.write("  - Quick in-place limitado a n<=10.000 por causa do pior caso O(n2)\n")
-    f.write("    em listas ordenadas/invertidas (pag. 50 do PDF).\n")
+    f.write("    em listas ordenadas/invertidas.\n")
     f.write("=" * 78 + "\n\n")
 
     for cenario in cenarios:
@@ -281,7 +281,7 @@ with open("outputs/relatorio_ordenacao.txt", "w", encoding="utf-8") as f:
                 f.write(f"{nome:<22} {n:>8} {media:>14.4f} {dp:>12.4f}\n")
         f.write("\n")
 
-    # Síntese final estilo página 61 do PDF
+    # Síntese final
     f.write("\n" + "=" * 78 + "\n")
     f.write("SÍNTESE — TEMPO EM n MAIS ALTO POR CENÁRIO\n")
     f.write("=" * 78 + "\n")

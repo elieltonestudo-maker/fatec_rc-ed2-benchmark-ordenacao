@@ -50,12 +50,25 @@ Ver [`docs/respostas.md`](docs/respostas.md) para as respostas às 3 questões p
 
 ## ▶️ Como executar
 
-```bash
-pip install matplotlib
-python new_test.py
-```
+1. Instale as dependências:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Rode o benchmark:
+   ```bash
+   python new_test.py
+   ```
 
 ## 📂 Saídas geradas
 
 - `outputs/benchmark_ordenacao.png` — 6 gráficos (3 cenários × linear/log-log)
 - `outputs/relatorio_ordenacao.txt` — tabelas com média ± desvio
+
+## 📚 Referências
+
+- **SARAIVA JÚNIOR, Orlando.** *Estrutura de Dados — Ordenação*. Fatec Rio Claro, 2026. (material de aula em PDF, distribuído pelo professor)
+- **SARAIVA JÚNIOR, Orlando.** *Exercícios — Ordenação*. Fatec Rio Claro, 2026. (lista de exercícios da disciplina)
+- **AGARWAL, Basant.** *Hands-On Data Structures and Algorithms with Python*. 3. ed. Birmingham: Packt Publishing, 2022.
+- **CANNING, John; BRODER, Alan; LAFORE, Robert.** *Data Structures & Algorithms in Python*. Boston: Addison-Wesley Professional, 2019.
+- **RAMALHO, Luciano.** *Fluent Python: clear, concise, and effective programming*. 2. ed. Sebastopol, CA: O'Reilly Media, 2022. 1014 p.
